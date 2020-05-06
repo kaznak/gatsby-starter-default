@@ -4,4 +4,12 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+"use strict"
+require("ts-node").register({
+  compilerOptions: {
+    module: "commonjs",
+    target: "esnext",
+  },
+})
+const gastbyNode = require("./src/gatsby-node/index")
+exports.createPages = gastbyNode.createPages
