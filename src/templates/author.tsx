@@ -1,5 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
 import { SiteSiteMetadataAuthors } from "../../types/graphql-types"
 // ______________________________________________________
 //
@@ -10,12 +13,18 @@ export type Args = {
 
 // ______________________________________________________
 //
-const Component: React.FC<{ pageContext: Args }> = ({ pageContext }) => (
-  <div>
-    <h1>{pageContext.author.name}</h1>
-    <Link to="/">Back to top</Link>
-  </div>
-)
+const Component: React.FC<{ pageContext: Args }> = ({ pageContext }) => {
+  const author = pageContext.author
+  return (
+    <Layout>
+      <SEO title={`Author: {author.name}`} />
+      <div>
+        <h1>{author.name}</h1>
+        <Link to="/">Back to top</Link>
+      </div>
+    </Layout>
+  )
+}
 // ______________________________________________________
 //
 
