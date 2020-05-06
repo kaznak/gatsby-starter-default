@@ -11,3 +11,12 @@ mv gatsby-node.js{,.back}
 pnpm run build
 mv gatsby-node.js{.back,}
 ```
+
+# todo
+
+- [ ] introduce typescript
+  - [ ] with graphql type definition
+  - [ ] and the example features
+- [ ] introduce jest test framework
+- [ ] introduce storybook
+- [ ] introduce Material UI
