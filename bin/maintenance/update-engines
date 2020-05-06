@@ -1,0 +1,18 @@
+pushd ~/.anyenv/envs/nodenv/plugins/node-build
+git pull
+popd
+
+echo install nice version of nodejs
+
+npm i -g npm
+npm i -g pnpm
+pnpm i -g yarn
+
+cat <<EOF
+  "engines": {
+    "node": "^$(node --version|sed -e 's/^v//')",
+    "pnpm": "^$(pnpm --version)",
+    "yarn": "^$(yarn --version)",
+    "npm": "^$(npm --version)"
+  },
+EOF
