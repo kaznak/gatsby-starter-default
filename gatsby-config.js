@@ -6,6 +6,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-pnpm`,
+    {
+      resolve: `gatsby-plugin-ts`,
+      options: {
+        fileName: `types/graphql-types.d.ts`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
